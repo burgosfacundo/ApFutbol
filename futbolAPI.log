@@ -1,0 +1,39 @@
+[2023-08-1419:50:07] [ ERROR] [CityService:19] Ya existe una ciudad con el nombre: Buenos Aires
+[2023-08-1419:50:07] [ INFO ] [CityService:23] Se creo una nueva ciudad: Buenos Aires
+[2023-08-1419:57:39] [ INFO ] [CityService:23] Se creo una nueva ciudad: Buenos Aires
+[2023-08-1419:57:58] [ ERROR] [CityService:19] Ya existe una ciudad con el nombre: Buenos Aires
+[2023-08-1420:15:13] [ ERROR] [CityService:22] Ya existe una ciudad con el nombre: Buenos Aires
+[2023-08-1420:15:13] [ INFO ] [CityService:26] Se creo una nueva ciudad: Buenos Aires
+[2023-08-1420:15:13] [ INFO ] [CityService:33] La tabla Ciudad no tiene registros
+[2023-08-1420:26:25] [ ERROR] [CityService:22] Ya existe una ciudad con el nombre: Buenos Aires
+[2023-08-1420:26:25] [ ERROR] [CityService:61] No existe un registro en la tabla Ciudad con el id: 1
+[2023-08-1420:26:25] [ ERROR] [CityService:53] No existe una ciudad con el nombre:nombre
+[2023-08-1420:26:25] [ INFO ] [CityService:72] Se elimino el registro con el id: 1 de la tabla Ciudad
+[2023-08-1420:26:25] [ INFO ] [CityService:65] Se modifico el registro con el id: 1 de la tabla Ciudad
+[2023-08-1420:26:25] [ ERROR] [CityService:45] No existe una ciudad con el id:1
+[2023-08-1420:26:25] [ INFO ] [CityService:26] Se creo una nueva ciudad: Buenos Aires
+[2023-08-1420:26:25] [ INFO ] [CityService:33] La tabla Ciudad no tiene registros
+[2023-08-1420:29:07] [ ERROR] [CityService:22] Ya existe una ciudad con el nombre: Buenos Aires
+[2023-08-1420:29:07] [ ERROR] [CityService:61] No existe un registro en la tabla Ciudad con el id: 1
+[2023-08-1420:29:07] [ ERROR] [CityService:53] No existe una ciudad con el nombre:nombre
+[2023-08-1420:29:07] [ INFO ] [CityService:72] Se elimino el registro con el id: 1 de la tabla Ciudad
+[2023-08-1420:29:07] [ INFO ] [CityService:65] Se modifico el registro con el id: 1 de la tabla Ciudad
+[2023-08-1420:29:07] [ ERROR] [CityService:45] No existe una ciudad con el id:1
+[2023-08-1420:29:07] [ INFO ] [CityService:26] Se creo una nueva ciudad: Buenos Aires
+[2023-08-1420:29:07] [ INFO ] [CityService:33] La tabla Ciudad no tiene registros
+[2023-08-1420:29:29] [ ERROR] [CityService:22] Ya existe una ciudad con el nombre: Buenos Aires
+[2023-08-1420:29:29] [ ERROR] [CityService:61] No existe un registro en la tabla Ciudad con el id: 1
+[2023-08-1420:29:29] [ ERROR] [CityService:53] No existe una ciudad con el nombre:nombre
+[2023-08-1420:29:29] [ INFO ] [CityService:72] Se elimino el registro con el id: 1 de la tabla Ciudad
+[2023-08-1420:29:29] [ INFO ] [CityService:65] Se modifico el registro con el id: 1 de la tabla Ciudad
+[2023-08-1420:29:29] [ ERROR] [CityService:45] No existe una ciudad con el id:1
+[2023-08-1420:29:29] [ INFO ] [CityService:26] Se creo una nueva ciudad: Buenos Aires
+[2023-08-1420:29:29] [ INFO ] [CityService:33] La tabla Ciudad no tiene registros
+[2023-08-1420:29:42] [ ERROR] [CityService:22] Ya existe una ciudad con el nombre: Buenos Aires
+[2023-08-1420:29:42] [ ERROR] [CityService:61] No existe un registro en la tabla Ciudad con el id: 1
+[2023-08-1420:29:42] [ ERROR] [CityService:53] No existe una ciudad con el nombre:nombre
+[2023-08-1420:29:42] [ INFO ] [CityService:72] Se elimino el registro con el id: 1 de la tabla Ciudad
+[2023-08-1420:29:42] [ INFO ] [CityService:65] Se modifico el registro con el id: 1 de la tabla Ciudad
+[2023-08-1420:29:42] [ ERROR] [CityService:45] No existe una ciudad con el id:1
+[2023-08-1420:29:42] [ INFO ] [CityService:26] Se creo una nueva ciudad: Buenos Aires
+[2023-08-1420:29:42] [ INFO ] [CityService:33] La tabla Ciudad no tiene registros
