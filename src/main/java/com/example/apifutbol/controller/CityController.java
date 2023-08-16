@@ -35,12 +35,12 @@ public class CityController {
     }
 
     @GetMapping("/nombre={nombre}")
-    public ResponseEntity<CityDTO> getByNombre(@PathVariable String name) throws CityNotFoundException {
+    public ResponseEntity<CityDTO> getByName(@PathVariable String name) throws CityNotFoundException {
         return  ResponseEntity.ok(service.getByName(name));
     }
 
     @PutMapping("/editar")
-    public ResponseEntity<String> update(@RequestBody CityDTO cityDTO) throws  CityNotFoundException {
+    public ResponseEntity<String> update(@RequestBody CityDTO cityDTO) throws CityNotFoundException, BadRequestException {
         service.update(cityDTO);
         return new ResponseEntity<>("Se edito la ciudad correctamente",HttpStatus.OK);
     }

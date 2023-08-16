@@ -24,7 +24,7 @@ public class CityControllerTest {
     private CityService service;
     @InjectMocks
     private CityController controller;
-    private final CityDTO cityDTO = new CityDTO(1L,"nombre");
+    private final CityDTO cityDTO = new CityDTO(1L,"nombre",1L);
 
     @Test
     @DisplayName("WHEN we create a city THEN return HTTP STATUS 201 CREATED and a message 'Se creo la ciudad correctamente'")
@@ -59,12 +59,12 @@ public class CityControllerTest {
         //WHEN
         given(service.getByName(anyString())).willReturn(cityDTO);
         //THEN
-        assertEquals(controller.getByNombre(anyString()),ResponseEntity.ok(cityDTO));
+        assertEquals(controller.getByName(anyString()),ResponseEntity.ok(cityDTO));
     }
 
     @Test
     @DisplayName("WHEN we update a city THEN return HTTP STATUS 200 OK and a message 'Se edito la ciudad correctamente'")
-    public void updateCity() throws CityNotFoundException {
+    public void updateCity() throws CityNotFoundException, BadRequestException {
         //WHEN
         given(service.update(cityDTO)).willReturn(true);
         //THEN

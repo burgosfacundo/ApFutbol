@@ -8,6 +8,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.Optional;
 
 public interface CityRepository extends JpaRepository<City,Long> {
-    @Query("select c from City c where c.name = :nombre")
-    Optional<City> findByName(@Param("nombre") String nombre);
+    @Query("select c from City c where c.name = :name")
+    Optional<City> findByName(@Param("name") String name);
 }

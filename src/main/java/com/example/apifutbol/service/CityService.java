@@ -2,9 +2,12 @@ package com.example.apifutbol.service;
 
 import com.example.apifutbol.exception.BadRequestException;
 import com.example.apifutbol.exception.CityNotFoundException;
+import com.example.apifutbol.exception.CountryNotFoundException;
 import com.example.apifutbol.model.City;
+import com.example.apifutbol.model.Country;
 import com.example.apifutbol.model.dto.CityDTO;
 import com.example.apifutbol.repository.CityRepository;
+import com.example.apifutbol.repository.CountryRepository;
 import lombok.AllArgsConstructor;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
@@ -15,12 +18,17 @@ import java.util.List;
 @Service
 public class CityService {
     private final CityRepository repository;
+    private final CountryRepository countryRepository;
     private static final Logger logger = Logger.getLogger(CityService.class);
 
     public boolean create(CityDTO cityDTO) throws BadRequestException {
         if (repository.findByName(cityDTO.name()).isPresent()) {
             logger.error("Ya existe una ciudad con el nombre: " + cityDTO.name());
             throw new BadRequestException("Ya existe una ciudad con el nombre: " + cityDTO.name());
+        }
+        if (countryRepository.findById(cityDTO.idPais()).isEmpty()) {
+            logger.error("No existe un pais con el id: " + cityDTO.idPais());
+            throw new BadRequestException("No existe un pais con el id: " + cityDTO.idPais());
         }
         repository.save(mapToCity(cityDTO));
         logger.info("Se creo una nueva ciudad: " + cityDTO.name());
@@ -56,10 +64,14 @@ public class CityService {
         return mapToDTO(optional.get());
     }
 
-    public boolean update(CityDTO cityDTO) throws CityNotFoundException {
+    public boolean update(CityDTO cityDTO) throws CityNotFoundException, BadRequestException {
         if (repository.findById(cityDTO.id()).isEmpty()) {
             logger.error("No existe un registro en la tabla Ciudad con el id: " + cityDTO.id());
             throw new CityNotFoundException();
+        }
+        if (countryRepository.findById(cityDTO.idPais()).isEmpty()) {
+            logger.error("No existe un pais con el id: " + cityDTO.idPais());
+            throw new BadRequestException("No existe un pais con el id: " + cityDTO.idPais());
         }
         repository.save(mapToCity(cityDTO));
         logger.info("Se modifico el registro con el id: " + cityDTO.id() + " de la tabla Ciudad");
@@ -67,20 +79,26 @@ public class CityService {
     }
 
     public boolean deleteById(Long id) throws CityNotFoundException {
-        if(repository.findById(id).isEmpty()) throw new CityNotFoundException();
+        if(repository.findById(id).isEmpty()){
+            logger.error("No existe un registro en la tabla Ciudad con el id: " + id);
+            throw new CityNotFoundException();
+        }
         repository.deleteById(id);
         logger.info("Se elimino el registro con el id: " + id + " de la tabla Ciudad");
         return true;
     }
 
-    private City mapToCity(CityDTO ciudadDTO){
+    private City mapToCity(CityDTO cityDTO){
         City city = new City();
+        Country country = new Country();
         city.setId(null);
-        city.setName(ciudadDTO.name());
+        city.setName(cityDTO.name());
+        country.setId(cityDTO.idPais());
+        city.setCountry(country);
         return city;
     }
 
-    private CityDTO mapToDTO(City ciudad){
-        return new CityDTO(ciudad.getId(), ciudad.getName());
+    private CityDTO mapToDTO(City city){
+        return new CityDTO(city.getId(), city.getName(),city.getCountry().getId());
     }
 }
