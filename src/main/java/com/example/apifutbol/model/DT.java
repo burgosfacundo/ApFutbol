@@ -19,4 +19,16 @@ public class DT {
 
     @Column(name = "nombre",nullable = false,length = 200)
     private String name;
+
+    @OneToOne
+    @JoinColumn(name="id_pais")
+    private Country country;
+
+    @OneToOne
+    @JoinColumn(name="id_ciudad")
+    private City city;
+
+    @OneToOne
+    @JoinColumn(name="id_equipo")
+    private Team team;
 }

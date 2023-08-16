@@ -25,4 +25,15 @@ public class Stadium {
 
     @Column(name = "tipoPasto",nullable = false)
     private String typeGrass;
+
+    @OneToOne
+    @JoinColumn(name="id_pais")
+    private Country country;
+
+    @OneToOne
+    @JoinColumn(name="id_ciudad")
+    private City city;
+
+    @OneToOne(mappedBy = "stadium")
+    private Team team;
 }

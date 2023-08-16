@@ -31,4 +31,16 @@ public class Player {
 
     @Column(name = "partidosJugados",nullable = false)
     private Integer gamesPlayed;
+
+    @OneToOne
+    @JoinColumn(name="id_pais")
+    private Country country;
+
+    @OneToOne
+    @JoinColumn(name="id_ciudad")
+    private City city;
+
+    @ManyToOne
+    @JoinColumn(name = "id_equipo",nullable = false)
+    private Team team;
 }

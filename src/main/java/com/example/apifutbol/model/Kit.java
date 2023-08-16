@@ -25,4 +25,7 @@ public class Kit {
 
     @Column(name = "tercera")
     private String third;
+
+    @OneToOne(mappedBy = "kit")
+    private Team team;
 }
