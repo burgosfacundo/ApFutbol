@@ -50,6 +50,6 @@ public class CountryController {
     @DeleteMapping("/borrar/{id}")
     public ResponseEntity<String> deleteById(@PathVariable Long id ) throws CountryNotFoundException {
         service.deleteById(id);
-        return new ResponseEntity<>("Se elimino la ciudad", HttpStatus.OK);
+        return new ResponseEntity<>("Se elimino el pais", HttpStatus.OK);
     }
 }

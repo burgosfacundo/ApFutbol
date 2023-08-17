@@ -45,3 +45,12 @@
 [2023-08-1619:32:45] [ ERROR] [CityService:45] No existe una ciudad con el id:1
 [2023-08-1619:32:45] [ INFO ] [CityService:26] Se creo una nueva ciudad: Buenos Aires
 [2023-08-1619:32:45] [ INFO ] [CityService:33] La tabla Ciudad no tiene registros
+[2023-08-1718:07:14] [ ERROR] [CityService:24] Ya existe un pais con el nombre: Argentina
+[2023-08-1718:07:14] [ ERROR] [CityService:79] No existe un registro en la tabla Pais con el id: 5
+[2023-08-1718:07:14] [ ERROR] [CityService:57] No existe un pais con el nombre:Brasil
+[2023-08-1718:07:14] [ INFO ] [CityService:28] Se creo un nuevo pais: Argentina
+[2023-08-1718:07:14] [ INFO ] [CityService:73] Se modifico el registro con el id: 1 de la tabla Pais
+[2023-08-1718:07:14] [ ERROR] [CityService:48] No existe un pais con el id:1
+[2023-08-1718:07:14] [ INFO ] [CityService:35] La tabla Pais no tiene registros
+[2023-08-1718:07:14] [ INFO ] [CityService:83] Se elimino el registro con el id: 1 de la tabla Pais
+[2023-08-1718:07:14] [ ERROR] [CityService:65] No existe un registro en la tabla Pais con el id: 1

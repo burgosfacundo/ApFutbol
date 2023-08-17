@@ -73,7 +73,7 @@ public class CityControllerTest {
 
     @Test
     @DisplayName("WHEN we delete a city by id THEN return HTTP STATUS 200 OK and a message 'Se elimino la ciudad'")
-    public void deleteCiudadById() throws CityNotFoundException {
+    public void deleteCityById() throws CityNotFoundException {
         //WHEN
         given(service.deleteById(anyLong())).willReturn(true);
         //THEN

@@ -34,7 +34,7 @@ public class CityServiceTest {
 
     @BeforeEach
     void setUp(){
-        cityDTO = new CityDTO(1L, "Buenos Aires");
+        cityDTO = new CityDTO(1L, "Buenos Aires",1L);
     }
 
     @Test
@@ -92,7 +92,7 @@ public class CityServiceTest {
 
     @Test
     @DisplayName("WHEN we bring a city by name THEN don´t throws any exception")
-    public void getByNameCiudad(){
+    public void getByNameCity(){
         //GIVEN
         given(repository.findByName(anyString())).willReturn(Optional.of(city));
         //WHEN AND THEN
@@ -117,7 +117,7 @@ public class CityServiceTest {
     }
     @Test
     @DisplayName("WHEN we update a city that not exists then it throws CityNotFoundException")
-    public void CiudadNotFoundException(){
+    public void updateCountryException(){
         //GIVEN
         given(repository.findById(anyLong())).willReturn(Optional.empty());
         //WHEN AND THEN
@@ -134,7 +134,7 @@ public class CityServiceTest {
     }
     @Test
     @DisplayName("WHEN we delete city that is not present in the db THEN it throws CityNotFoundException")
-    public void deleteByIdCiudadException(){
+    public void deleteByIdCityException(){
         //GIVEN
         given(repository.findById(anyLong())).willReturn(Optional.empty());
         //WHEN AND THEN
