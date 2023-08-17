@@ -17,8 +17,8 @@ public class GlobalHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
     }
 
-    @ExceptionHandler({CountryNotFoundException.class})
-    public ResponseEntity<String> countryNotFound(CountryNotFoundException e){
+    @ExceptionHandler({CompetitionNotFoundException.class})
+    public ResponseEntity<String> competitionNotFound(CompetitionNotFoundException e){
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
     }
 }

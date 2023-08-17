@@ -2,7 +2,6 @@ package com.example.apifutbol.service;
 
 import com.example.apifutbol.exception.BadRequestException;
 import com.example.apifutbol.exception.CityNotFoundException;
-import com.example.apifutbol.exception.CountryNotFoundException;
 import com.example.apifutbol.model.City;
 import com.example.apifutbol.model.Country;
 import com.example.apifutbol.model.dto.CityDTO;
@@ -47,6 +46,7 @@ public class CityService {
         }
         return dtos;
     }
+
     public CityDTO getById(Long id) throws CityNotFoundException {
         var optional = repository.findById(id);
         if (optional.isEmpty()) {
@@ -55,6 +55,7 @@ public class CityService {
         }
         return mapToDTO(optional.get());
     }
+
     public CityDTO getByName(String name) throws CityNotFoundException {
         var optional = repository.findByName(name);
         if (optional.isEmpty()) {
