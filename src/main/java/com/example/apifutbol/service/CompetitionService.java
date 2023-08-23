@@ -9,6 +9,7 @@ import com.example.apifutbol.model.dto.CompetitionResponseDTO;
 import com.example.apifutbol.repository.CompetitionRepository;
 import com.example.apifutbol.repository.CountryRepository;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
@@ -106,6 +107,6 @@ public class CompetitionService {
 
     private CompetitionResponseDTO mapToDTO(Competition competition){
         return new CompetitionResponseDTO(competition.getId(), competition.getName(),
-                competition.getCountry().getId(),competition.getTeams());
+                competition.getCountry(),competition.getTeams());
     }
 }

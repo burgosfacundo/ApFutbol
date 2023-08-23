@@ -1,6 +1,5 @@
 package com.example.apifutbol.repository;
 
-import com.example.apifutbol.model.City;
 import com.example.apifutbol.model.Country;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

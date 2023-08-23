@@ -1,6 +1,7 @@
 package com.example.apifutbol.services;
 
 import com.example.apifutbol.exception.BadRequestException;
+import com.example.apifutbol.exception.CityNotFoundException;
 import com.example.apifutbol.exception.CountryNotFoundException;
 import com.example.apifutbol.model.Country;
 import com.example.apifutbol.model.dto.CountryRequestDTO;
