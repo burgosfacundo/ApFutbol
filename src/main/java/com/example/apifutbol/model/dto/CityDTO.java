@@ -1,4 +1,4 @@
 package com.example.apifutbol.model.dto;
 
-public record CityDTO(Long id, String name, Long idPais) {
+public record CityDTO(Long id, String name, Long idCountry) {
 }

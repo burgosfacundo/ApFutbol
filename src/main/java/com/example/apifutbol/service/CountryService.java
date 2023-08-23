@@ -17,7 +17,7 @@ import java.util.List;
 @Service
 public class CountryService {
     private final CountryRepository repository;
-    private static final Logger logger = Logger.getLogger(CityService.class);
+    private static final Logger logger = Logger.getLogger(CountryService.class);
 
     public boolean create(CountryRequestDTO countryRequestDTO) throws BadRequestException {
         if (repository.findByName(countryRequestDTO.name()).isPresent()) {

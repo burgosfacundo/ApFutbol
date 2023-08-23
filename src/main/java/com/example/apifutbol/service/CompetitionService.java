@@ -23,16 +23,16 @@ public class CompetitionService {
     private final CompetitionRepository repository;
     private final CountryRepository countryRepository;
 
-    private static final Logger logger = Logger.getLogger(CityService.class);
+    private static final Logger logger = Logger.getLogger(CompetitionService.class);
 
     public boolean create(CompetitionRequestDTO competitionRequestDTO) throws BadRequestException {
         if (repository.findByName(competitionRequestDTO.name()).isPresent()) {
             logger.error("Ya existe una competicion con el nombre: " + competitionRequestDTO.name());
             throw new BadRequestException("Ya existe una competicion con el nombre: " + competitionRequestDTO.name());
         }
-        if (countryRepository.findById(competitionRequestDTO.idPais()).isEmpty()) {
-            logger.error("No existe un pais con el id: " + competitionRequestDTO.idPais());
-            throw new BadRequestException("No existe un pais con el id: " + competitionRequestDTO.idPais());
+        if (countryRepository.findById(competitionRequestDTO.idCountry()).isEmpty()) {
+            logger.error("No existe un pais con el id: " + competitionRequestDTO.idCountry());
+            throw new BadRequestException("No existe un pais con el id: " + competitionRequestDTO.idCountry());
         }
         repository.save(mapToCompetition(competitionRequestDTO));
         logger.info("Se creo una nueva competencia: " + competitionRequestDTO.name());
@@ -75,9 +75,9 @@ public class CompetitionService {
             logger.error("No existe un registro en la tabla Competencias con el id: " + competitionRequestDTO.id());
             throw new CompetitionNotFoundException();
         }
-        if (countryRepository.findById(competitionRequestDTO.idPais()).isEmpty()) {
-            logger.error("No existe una competencia con el id: " + competitionRequestDTO.idPais());
-            throw new BadRequestException("No existe una competencia con el id: " + competitionRequestDTO.idPais());
+        if (countryRepository.findById(competitionRequestDTO.idCountry()).isEmpty()) {
+            logger.error("No existe una competencia con el id: " + competitionRequestDTO.idCountry());
+            throw new BadRequestException("No existe una competencia con el id: " + competitionRequestDTO.idCountry());
         }
 
         repository.save(mapToCompetition(competitionRequestDTO));
@@ -100,7 +100,7 @@ public class CompetitionService {
         Country country = new Country();
         competition.setId(null);
         competition.setName(competitionRequestDTO.name());
-        country.setId(competitionRequestDTO.idPais());
+        country.setId(competitionRequestDTO.idCountry());
         competition.setCountry(country);
         return competition;
     }

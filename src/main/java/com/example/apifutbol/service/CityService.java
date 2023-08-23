@@ -25,9 +25,9 @@ public class CityService {
             logger.error("Ya existe una ciudad con el nombre: " + cityDTO.name());
             throw new BadRequestException("Ya existe una ciudad con el nombre: " + cityDTO.name());
         }
-        if (countryRepository.findById(cityDTO.idPais()).isEmpty()) {
-            logger.error("No existe un pais con el id: " + cityDTO.idPais());
-            throw new BadRequestException("No existe un pais con el id: " + cityDTO.idPais());
+        if (countryRepository.findById(cityDTO.idCountry()).isEmpty()) {
+            logger.error("No existe un pais con el id: " + cityDTO.idCountry());
+            throw new BadRequestException("No existe un pais con el id: " + cityDTO.idCountry());
         }
         repository.save(mapToCity(cityDTO));
         logger.info("Se creo una nueva ciudad: " + cityDTO.name());
@@ -70,9 +70,9 @@ public class CityService {
             logger.error("No existe un registro en la tabla Ciudad con el id: " + cityDTO.id());
             throw new CityNotFoundException();
         }
-        if (countryRepository.findById(cityDTO.idPais()).isEmpty()) {
-            logger.error("No existe un pais con el id: " + cityDTO.idPais());
-            throw new BadRequestException("No existe un pais con el id: " + cityDTO.idPais());
+        if (countryRepository.findById(cityDTO.idCountry()).isEmpty()) {
+            logger.error("No existe un pais con el id: " + cityDTO.idCountry());
+            throw new BadRequestException("No existe un pais con el id: " + cityDTO.idCountry());
         }
         repository.save(mapToCity(cityDTO));
         logger.info("Se modifico el registro con el id: " + cityDTO.id() + " de la tabla Ciudad");
@@ -94,7 +94,7 @@ public class CityService {
         Country country = new Country();
         city.setId(null);
         city.setName(cityDTO.name());
-        country.setId(cityDTO.idPais());
+        country.setId(cityDTO.idCountry());
         city.setCountry(country);
         return city;
     }

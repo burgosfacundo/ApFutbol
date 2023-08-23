@@ -21,4 +21,9 @@ public class GlobalHandler {
     public ResponseEntity<String> competitionNotFound(CompetitionNotFoundException e){
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
     }
+
+    @ExceptionHandler({DTNotFoundException.class})
+    public ResponseEntity<String> dtNotFound(DTNotFoundException e){
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+    }
 }
