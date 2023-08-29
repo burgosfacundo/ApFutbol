@@ -23,7 +23,7 @@ public class DtService {
     private final DTRepository repository;
     private final CountryRepository countryRepository;
     private  final CityRepository cityRepository;
-    private static final Logger logger = Logger.getLogger(CityService.class);
+    private static final Logger logger = Logger.getLogger(DtService.class);
 
     public boolean create(DtRequestDTO dtRequestDTO) throws BadRequestException {
         if (repository.findByName(dtRequestDTO.name()).isPresent()) {

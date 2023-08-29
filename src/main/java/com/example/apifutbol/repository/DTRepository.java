@@ -8,6 +8,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.Optional;
 
 public interface DTRepository extends JpaRepository<DT,Long> {
-    @Query("select c from DT d where d.name = :name")
+    @Query("select d from DT d where d.name = :name")
     Optional<DT> findByName(@Param("name") String name);
 }

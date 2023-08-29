@@ -26,4 +26,9 @@ public class GlobalHandler {
     public ResponseEntity<String> dtNotFound(DTNotFoundException e){
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
     }
+
+    @ExceptionHandler({KitNotFoundException.class})
+    public ResponseEntity<String> kitNotFound(KitNotFoundException e){
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+    }
 }
