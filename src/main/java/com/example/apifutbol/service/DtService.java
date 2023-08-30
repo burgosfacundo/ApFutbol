@@ -109,14 +109,18 @@ public class DtService {
 
     private DT mapToDT(DtRequestDTO dtRequestDTO){
         DT dt = new DT();
+
         dt.setId(null);
         dt.setName(dtRequestDTO.name());
+
         var country = new Country();
         country.setId(dtRequestDTO.idCountry());
         dt.setCountry(country);
+
         var city = new City();
         city.setId(dtRequestDTO.idCity());
         dt.setCity(city);
+
         return dt;
     }
 

@@ -93,12 +93,16 @@ public class KitService {
 
     private Kit mapToKit(KitDTO kitDTO){
         Kit kit = new Kit();
+
         kit.setId(null);
         kit.setFirst(kitDTO.first());
         kit.setSecond(kitDTO.second());
         kit.setThird(kitDTO.third());
+
         Team team = new Team();
         team.setId(kitDTO.idTeam());
+        kit.setTeam(team);
+
         return kit;
     }
 

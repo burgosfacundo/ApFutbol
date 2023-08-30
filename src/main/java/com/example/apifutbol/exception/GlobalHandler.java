@@ -31,4 +31,9 @@ public class GlobalHandler {
     public ResponseEntity<String> kitNotFound(KitNotFoundException e){
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
     }
+
+    @ExceptionHandler({StadiumNotFoundException.class})
+    public ResponseEntity<String> stadiumNotFound(StadiumNotFoundException e){
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+    }
 }

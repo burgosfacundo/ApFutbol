@@ -86,8 +86,10 @@ public class CountryService {
 
     private Country mapToCountry(CountryRequestDTO countryRequestDTO){
         Country country = new Country();
+
         country.setId(null);
         country.setName(countryRequestDTO.name());
+
         return country;
     }
 

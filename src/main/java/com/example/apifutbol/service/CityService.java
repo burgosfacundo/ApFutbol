@@ -91,11 +91,14 @@ public class CityService {
 
     private City mapToCity(CityDTO cityDTO){
         City city = new City();
-        Country country = new Country();
+
         city.setId(null);
         city.setName(cityDTO.name());
+
+        Country country = new Country();
         country.setId(cityDTO.idCountry());
         city.setCountry(country);
+
         return city;
     }
 

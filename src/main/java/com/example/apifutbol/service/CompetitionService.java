@@ -97,11 +97,14 @@ public class CompetitionService {
 
     private Competition mapToCompetition(CompetitionRequestDTO competitionRequestDTO){
         Competition competition = new Competition();
-        Country country = new Country();
+
         competition.setId(null);
         competition.setName(competitionRequestDTO.name());
+
+        Country country = new Country();
         country.setId(competitionRequestDTO.idCountry());
         competition.setCountry(country);
+
         return competition;
     }
 
